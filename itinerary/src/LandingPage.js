@@ -24,7 +24,8 @@ function LandingPage() {
         <div className="main">
             <div className="box">
                 <div className="logo"></div>
-                <span>Plan Your Trip Now</span>
+                <span className="serviceName">Mytinerary</span>
+                <span className="text">Plan Your Trip Now</span>
                 <input className="dest" placeholder="  Enter Destination..." />
                 <div className="date">
                     <DatePicker
