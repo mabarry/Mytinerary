@@ -9,6 +9,7 @@ function LandingPage() {
                 <input className="date" placeholder="Enter Trip Dates..."></input>
                 <button className="submit">GO</button>
             </div>
+            <div className="blur"></div>
         </div>
     )
 };
