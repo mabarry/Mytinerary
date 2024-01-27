@@ -21,9 +21,9 @@ function LandingPage() {
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
             <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet" />
         </Helmet>
-        <div className="main">
+        <div className="main">  
             <div className="box">
-                <div className="logo"></div>
+                <img src="./logo.png" height="100" width="100"/>
                 <span className="serviceName">Mytinerary</span>
                 <span className="text">Plan Your Trip Now</span>
                 <input className="dest" placeholder="  Enter Destination..." />
