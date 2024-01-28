@@ -1,9 +1,8 @@
 .main {
     width: 100vw;
     height: 100vh;
-    background-image: url('landingBackground.jpg');
+    background: #363062;
     background-size: cover;
-    /* box-shadow: inset 0 0 0 1000px (0,0,0,#597e52); */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,39 +17,75 @@
 
 .box {
     position: absolute;
+    font-size: 200%;
+    font-family: 'Roboto Slab', serif;
     z-index: 2;
     width: 24%;
     height: 70%;
-    /* background-color: #ffffec; */
-    background-color: rgba(0,0,0, 0.5);
+    background-color: #fffffe;
+    border-radius: 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     padding: 3%;
 }
 
 .logo {
-    background-color: blue;
     width: 100px;
     height: 100px;
-    border-radius: 50%;
+    margin-bottom: 5px;
 }
 
 .dest{
-    border: 1px solid black;
-    width: 100%;
-    height: 3%;
+    border:2px solid #b3b3b3;
+    background:#dddddd;
+    width:200px;
+    border-radius:25px;
+    margin-bottom: 10px;
 }
 
-.date{
-    border: 1px solid black;
-    width: 100%;
-    height: 3%;
+.dest-flex{
+    display: flex;
+}
+
+.dest-flex svg{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.date-flex{
+    display: flex;
+}
+
+.date-flex svg{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.datepicker {
+    border: 2px solid #b3b3b3;
+    background: #dddddd;
+    width: 200px;
+    border-radius: 25px;
+    margin-bottom: 40px;
+}
+
+.serviceName{
+    font-size: 200%;
+    color: rgb(42, 193, 145);
+    margin-bottom: 1px;
+}
+
+.text{   
+    margin-bottom: 30px;
 }
 
 .submit{
     width: 30%;
     height: 10%;
     border-radius: 32px;
+    border-color: rgb(42, 193, 145);
+    background-color: rgb(42, 193, 145);
 }
