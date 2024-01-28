@@ -33,7 +33,8 @@
 .logo {
     width: 100px;
     height: 100px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
+    margin-top: 40px;
 }
 
 .dest{
@@ -41,7 +42,7 @@
     background:#dddddd;
     width:200px;
     border-radius:25px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .dest-flex{
@@ -69,17 +70,17 @@
     background: #dddddd;
     width: 200px;
     border-radius: 25px;
-    margin-bottom: 40px;
+    margin-bottom: 100px;
 }
 
 .serviceName{
     font-size: 200%;
     color: rgb(42, 193, 145);
-    margin-bottom: 1px;
+    margin-bottom: 5px;
 }
 
 .text{   
-    margin-bottom: 30px;
+    margin-bottom: 60px;
 }
 
 .submit{

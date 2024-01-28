@@ -8,6 +8,14 @@
     justify-content: center;
 }
 
+.confirm-button {
+    width: 50%;
+    height: 10%;
+    background-color: rgb(42, 193, 145);
+    border: none;
+    border-radius: 50%;
+}
+
 .edits {
     background-color: white;
     height: 80%;
@@ -22,7 +30,36 @@
 }
 
 .info {
-    background-color: rgb(196, 194, 194);
+    background-color: rgb(42, 193, 145);
+}
+
+.inner-box {
+    background-color: #fffffe;
+    height: 100%;
+    width: 85%;
+    margin: auto;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+}
+
+.rating {
+    display: flex;
+}
+
+.rating svg {
+    width: 20px; /* Adjust the width as needed */
+}
+
+.inner-box img {
+    margin-top: 15px;
+    height: 50%;
+    width: 100%;
+    border-radius: 10%;
+}
+
+.info h2 {
+    margin: 8px 0; /* Adjust the margin as needed */
 }
 
 .selection {
@@ -47,11 +84,13 @@
 
 .options {
     height: 45vh;
+    width: 60vh;
     overflow-y: auto;
     padding: 2%;
     background-color: rgb(196, 194, 194);
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
 }
