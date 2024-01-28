@@ -1,8 +1,15 @@
 import Schedule from "./components/schedule";
 import "./Itinerary.css"
+import { Helmet } from "react-helmet";
 
 function ItineraryPage() {
     return(
+        <>
+        <Helmet>
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+            <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet" />
+        </Helmet>
         <div className="main">
             <div className="itinerary-box">
                 <div className="iten-title">
@@ -15,6 +22,7 @@ function ItineraryPage() {
                 </div>
             </div>
         </div>
+    </>
     )
 };
 
