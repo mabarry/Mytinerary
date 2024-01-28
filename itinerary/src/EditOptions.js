@@ -3,9 +3,10 @@ import "./EditOptions.css";
 import Option from "./components/Option";
 import { Helmet } from "react-helmet";
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function EditOptions(eventType) {
-
+  const navigate = useNavigate();
   
   const[optionList, setOptionList] = useState([])
 
@@ -80,7 +81,7 @@ function EditOptions(eventType) {
                         {optionList}
                     </div>
                 </div>
-                <button className="back-button">Return to itinerary</button>
+                <button className="back-button" onClick={()=>{navigate("/itinerary")}}>Return to itinerary</button>
             </div>
       </div>
     </div>
