@@ -58,6 +58,10 @@ const calcDays = (start, end) => {
     console.log(`${daysDifference} difference between the dates`)
 }
 
+const sortByRating = (businesses) => {
+
+}
+
 const buildItinerary = async (startDate, endDate) => {
     const tripLength = calcDays(startDate, endDate);
     
@@ -98,17 +102,12 @@ const buildItinerary = async (startDate, endDate) => {
 app.post('/send-info', async(req, res) => { 
     try{
         const { sentLoc, sentStart, sentEnd } = req.body;
-        console.log("INCOMING INFORMATION");
-        console.log(sentLoc)
-        console.log(sentStart)
-        console.log(sentEnd)
         location = sentLoc;
         startDate = new Date(sentStart);
         endDate = new Date(sentEnd);
         res.json({ status: 'success' });
     } catch (error) {
       console.error('Error processing request:', error);
-      // Send an error response
       res.status(500).json({ error: 'Internal Server Error' });
     }
 });
@@ -120,6 +119,7 @@ app.get('/itinerary', async(req,res)=> {
 
 app.get('/otherOptions', async(req,res)=> {
     const results = await buildItinerary(0,1);
+    console.log(otherOptions)
     res.send(otherOptions)
 });
 

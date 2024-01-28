@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./EditOptions.css";
 import Option from "./components/Option";
 import { Helmet } from "react-helmet";
@@ -68,20 +68,7 @@ function EditOptions() {
                 <p>Breakfast</p>
                 <div className="options-border">
                 <div className="options">
-                    <Option onClick={handleOptionClick} />
-                    {/* Add other Option components with the same onClick prop */}
-                    <Option onClick={handleOptionClick} />
-                    {/* Add other Option components with the same onClick prop */}
-                    <Option onClick={handleOptionClick} />
-                    {/* Add other Option components with the same onClick prop */}
-                    <Option onClick={handleOptionClick} />
-                    {/* Add other Option components with the same onClick prop */}
-                    <Option onClick={handleOptionClick} />
-                    {/* Add other Option components with the same onClick prop */}
-                    <Option onClick={handleOptionClick} />
-                    {/* Add other Option components with the same onClick prop */}
-                    <Option onClick={handleOptionClick} />
-                    {/* Add other Option components with the same onClick prop */}
+                    {optionList}
                     </div>
                 </div>
             </div>
