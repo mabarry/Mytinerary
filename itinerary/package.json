@@ -17,7 +17,10 @@
     "react": "^18.2.0",
     "react-datepicker": "^5.0.0",
     "react-dom": "^18.2.0",
+<<<<<<< HEAD
+=======
     "react-helmet": "^6.1.0",
+>>>>>>> 3a95329979691a9d921120a59d4066a60e4398f2
     "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -44,5 +47,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-plugin-jest": "^27.6.3",
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "globals": {
+      "window": {},
+      "document": {}
+    }
   }
 }

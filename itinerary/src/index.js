@@ -5,6 +5,8 @@ import App from './App';
 import EditOptions from './EditOptions'
 import reportWebVitals from './reportWebVitals';
 import LandingPage from "./LandingPage"
+import ItineraryPage from './ItineraryPage';
+import Schedule from './components/schedule';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
