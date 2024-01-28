@@ -40,7 +40,6 @@ const getOptions = async (category) => {
         };
         const apiURL = `https://api.yelp.com/v3/businesses/search?location=${location}&categories=${category}&sort_by=best_match&limit=20`;
         const response = await fetch(apiURL, options);
-
         if(!response.ok){
             throw new Error("YO WHAT HAPPENED WHAATTT OH GOD ITS JOEVER")
         }
