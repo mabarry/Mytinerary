@@ -1,0 +1,31 @@
+.itinerary-box {
+    width: 60%;
+    padding: 2% 2% 2%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    color: rgb(42, 193, 145);
+}
+
+.schedule-box {
+    max-height: 70vh;
+    overflow: auto;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px;
+    border-radius: 16px;
+}
+
+.iten-title {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.iten-title svg{
+    height: 6vh;
+}

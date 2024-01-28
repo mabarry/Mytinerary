@@ -40,10 +40,12 @@
 .dest{
     border:2px solid #b3b3b3;
     background:#dddddd;
-    width:180px;
+    width:15vw;
+    height: 3vh;
     border-radius:25px;
     margin-bottom: 10px;
     padding: 4px 10px;
+    font-size: 20px;
     font-weight: bold;
     color: #363062;
 }
@@ -58,10 +60,9 @@
 }
 
 .dest-flex svg{
-    width: 20px;
-    height: 20px;
+    height: 3.5vh;
     margin-right: 5px;
-    margin-top: 1%;
+    margin-bottom: 4%;
 }
 
 .date-flex{
@@ -69,19 +70,20 @@
 }
 
 .date-flex svg{
-    width: 20px;
-    height: 20px;
+    height: 3.5vh;
     margin-right: 5px;
-    margin-top: 8%;
+    margin-top: 4%;
 }
 
 .datepicker {
     border: 2px solid #b3b3b3;
     background: #dddddd;
-    width: 180px;
+    width:15vw;
+    height: 3vh;
     border-radius: 25px;
     margin-bottom: 40px;
     padding: 4px 10px;
+    font-size: 20px;
     font-weight: bold;
     color: #363062;
 }

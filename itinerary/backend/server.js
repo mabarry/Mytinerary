@@ -26,6 +26,8 @@ const otherOptions = {
     nightLife: {}
 }
 
+const storedItinerary = null;
+
 
 const getOptions = async (category) => {
     try{
@@ -103,6 +105,41 @@ const buildItinerary = async () => {
     return itinerary;
 }
 
+const updateItinerary = (day, business, option) => {
+    let editedDay = storedItinerary[day];
+
+    switch (option) {
+        case "breakfast":
+          editedDay.breakfast = business;
+          break;
+        
+        case "activityOne":
+          editedDay.activityOne = business;
+          break;
+      
+        case "lunch":
+          editedDay.lunch = business;
+          break;
+      
+        case "activityTwo":
+          editedDay.activityTwo = business;
+          break;
+      
+        case "dinner":
+          editedDay.dinner = business;
+          break;
+      
+        case "nightLife":
+          editedDay.nightLife = business;
+          break;
+      
+        default:
+          console.log("Could not find relevant itinerary option to update.");
+      }
+
+      storedItinerary[day] = editedDay;
+}
+
 app.post('/send-info', async(req, res) => { 
     try{
         const { sentLoc, sentStart, sentEnd } = req.body;
@@ -116,9 +153,14 @@ app.post('/send-info', async(req, res) => {
     }
 });
 
-app.get('/itinerary', async(req,res)=> {
+app.get('/build-itinerary', async(req,res)=> {
     const results = await buildItinerary();
+    storedItinerary = results;
     res.send(results)
+});
+
+app.get('/get-itinerary', async(req,res)=> {
+    res.send(storedItinerary);
 });
 
 app.get('/otherOptions', async(req,res)=> {
@@ -134,6 +176,16 @@ app.get('/dates', async(req,res) => {
     }
 
     res.send(dates);
+})
+
+app.post('/edits', async(req, res) => {
+    try{
+        const { dayNum, business, option} = req.body;
+        updateItinerary(dayNum, business, option);
+    }catch (error) {
+        console.error('Error processing request:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+      }
 })
 
 app.listen(port, () => {
