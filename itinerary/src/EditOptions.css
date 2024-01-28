@@ -6,14 +6,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Roboto Slab', serif;
 }
 
 .confirm-button {
-    width: 50%;
-    height: 10%;
-    background-color: rgb(42, 193, 145);
+    margin-top: 20px;
+    width: 43%;
+    height: 12%;
+    border-radius: 32px;
     border: none;
-    border-radius: 50%;
+    background-color: rgb(42, 193, 145);
+    color: #363062;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .edits {
@@ -31,6 +36,14 @@
 
 .info {
     background-color: rgb(42, 193, 145);
+    overflow: fixed;
+}
+
+.info p {
+    color: gray;
+    font-size: 24px; /* Adjust the font size as needed */
+    margin-top: 60%;
+    align-items: center;
 }
 
 .inner-box {
@@ -68,7 +81,12 @@
     align-items: center;
 }
 
+.selection h1 {
+    margin-bottom: 0px;
+}
+
 .selection p {
+    margin-top: 5px;
     color: rgb(42, 193, 145);
     font-size: 32px;
 }
@@ -77,13 +95,13 @@
     background-color: rgb(196, 194, 194);
     padding: 2%;
     margin: 0 5%;
-    margin-top: auto;
+    margin-top: 0px;
     border-radius: 16px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .options {
-    height: 45vh;
+    height: 55vh;
     width: 60vh;
     overflow-y: auto;
     padding: 2%;
