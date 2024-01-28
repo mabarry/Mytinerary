@@ -1,15 +1,16 @@
 import { useState } from "react";
 import "./Session.css"
 
-const Session = () => {
+const Session = ({time, businessInfo, activity, handleClick}) => {
     
 
     return (
-        <div className="option-container">
-            <div className="time">8AM</div>
-            <img className="business-logo" src={require('../images/logo.png')} style={{height: "60px"}}/>
+        <div className="option-container" onClick={() =>{handleClick(businessInfo, activity)}}>
+            <div className="time">{time}</div>
+            <div className="activity-name">{activity}</div>
+            <img className="business-logo" src={businessInfo.image_url} style={{height: "60px"}}/>
             <div className="title-box">
-                <p>TITLE OF THE BUSINESS</p>
+                <p>{businessInfo.name}</p>
             </div>
         </div>
     );

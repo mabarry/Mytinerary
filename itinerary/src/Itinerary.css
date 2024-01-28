@@ -49,3 +49,31 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.inner-box {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.display-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.business-name {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 2%;
+}
+
+
+.holder-box {
+    padding: 2% 0%;
+    width: 50%;
+    height: 92%;
+    background-color: rgb(42, 193, 145);
+    overflow: auto;
+}

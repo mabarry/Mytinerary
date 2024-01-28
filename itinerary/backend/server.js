@@ -14,7 +14,7 @@ const port = process.env.PORT || 4000;
 app.use(cors());
 
 const apiKey = process.env.YELP_API_KEY;
-const categories = ["breakfast", "active", "lunch", "active", "dinner", "nightlife"]
+const categories = ["breakfast_brunch", "parks", "burgers", "active", "restaurants", "nightlife"]
 let location = "San Antonio"
 let startDate = null;
 let endDate = null;
@@ -168,7 +168,7 @@ app.post('/send-info', async(req, res) => {
 });
 
 app.get('/build-itinerary', async(req,res)=> {
-    console.log("")
+    console.log("Building itinerary...")
     const results = await buildItinerary();
     storedItinerary = results;
     res.send(results)
@@ -179,8 +179,8 @@ app.get('/get-itinerary', async(req,res)=> {
 });
 
 app.get('/otherOptions', async(req,res)=> {
-    const results = await buildItinerary();
-    console.log(otherOptions)
+    //const results = await buildItinerary();
+   
     res.send(otherOptions)
 });
 
