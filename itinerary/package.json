@@ -11,16 +11,14 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "datepicker": "^0.0.0",
     "cors": "^2.8.5",
+    "datepicker": "^0.0.0",
+    "helmet": "^7.1.0",
     "node-fetch": "^2.7.0",
     "react": "^18.2.0",
     "react-datepicker": "^5.0.0",
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
-=======
     "react-helmet": "^6.1.0",
->>>>>>> 3a95329979691a9d921120a59d4066a60e4398f2
     "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
