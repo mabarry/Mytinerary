@@ -2,19 +2,22 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs/promises');
 const fetch = require("node-fetch");
+const { start } = require('repl');
 require('dotenv').config();
 
 
 
 const app = express();
+app.use(express.json());
 const port = process.env.PORT || 4000;
 
-app.use(cors({ origin: 'http://localhost:4000' }));
+app.use(cors());
 
 const apiKey = process.env.YELP_API_KEY;
 const categories = ["breakfast", "active", "lunch", "active", "dinner", "nightlife"]
 let location = "San Antonio"
-let dates = "";
+let startDate = null;
+let endDate = null;
 const otherOptions = {
     breakfast: {},
     activities: {},
@@ -49,9 +52,15 @@ const getOptions = async (category) => {
     }
 }
 
+const calcDays = (start, end) => {
+    const timeDifference = end- start;
+    const daysDifference = timeDifference / (1000 * 60 * 60 * 24);
+    console.log(`${daysDifference} difference between the dates`)
+}
+
 const buildItinerary = async (startDate, endDate) => {
-    //const tripLength = calcDays(startDate, endDate);
-    const tripLength = 1;
+    const tripLength = calcDays(startDate, endDate);
+    
     let itinerary = [];
     for(let i = 0; i < tripLength; i++){
         const day = {
@@ -86,10 +95,22 @@ const buildItinerary = async (startDate, endDate) => {
     return itinerary;
 }
 
-app.post('/send-info', async(req, res)=> { 
-    const { sentLoc, sentDate } = req.body;
-    location = sentLoc;
-    dates = sentDate;
+app.post('/send-info', async(req, res) => { 
+    try{
+        const { sentLoc, sentStart, sentEnd } = req.body;
+        console.log("INCOMING INFORMATION");
+        console.log(sentLoc)
+        console.log(sentStart)
+        console.log(sentEnd)
+        location = sentLoc;
+        startDate = new Date(sentStart);
+        endDate = new Date(sentEnd);
+        res.json({ status: 'success' });
+    } catch (error) {
+      console.error('Error processing request:', error);
+      // Send an error response
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
 });
 
 app.get('/itinerary', async(req,res)=> {
