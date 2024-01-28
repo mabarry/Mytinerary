@@ -22,12 +22,12 @@ function Schedule() {
             let tempFive = [];
             let tempNine = [];
             for(let i = 0; i < itinerary.length; i++){
-                tempEight.push(<Session trackNum={i} time={'time-0800 / time-0930'} sessionTime={"8AM"} businessInfo={itinerary[i].breakfast} activity={"Breakfast"} />);
-                tempTen.push(<Session trackNum={i} time={'time-01000 / time-1130'} sessionTime={"10AM"} businessInfo={itinerary[i].activityOne} activity={"Breakfast"} />);
-                tempNoon.push(<Session trackNum={i} time={'time-1200 / time-1400'} sessionTime={"12PM"} businessInfo={itinerary[i].lunch} activity={"Breakfast"} />);
-                tempTwo.push(<Session trackNum={i} time={'time-1430 / time-1630'} sessionTime={"2:30PM"} businessInfo={itinerary[i].activityTwo} activity={"Breakfast"} />);
-                tempFive.push(<Session trackNum={i} time={'time-1700 / time-1900'} sessionTime={"5PM"} businessInfo={itinerary[i].dinner} activity={"Breakfast"} />);
-                tempNine.push(<Session trackNum={i} time={'time-2100 / time-2400'} sessionTime={"9PM"} businessInfo={itinerary[i].nightLife} activity={"Breakfast"} />);
+                tempEight.push(<Session trackNum={i+1} time={'time-0800 / time-1000'} sessionTime={"8AM"} businessInfo={itinerary[i].breakfast} activity={"Breakfast"} />);
+                tempTen.push(<Session trackNum={i+1} time={'time-01000 / time-1200'} sessionTime={"10AM"} businessInfo={itinerary[i].activityOne} activity={"First Activity"} />);
+                tempNoon.push(<Session trackNum={i+1} time={'time-1200 / time-1400'} sessionTime={"12PM"} businessInfo={itinerary[i].lunch} activity={"Lunch"} />);
+                tempTwo.push(<Session trackNum={i+1} time={'time-1400 / time-1500'} sessionTime={"2:30PM"} businessInfo={itinerary[i].activityTwo} activity={"Second Activity"} />);
+                tempFive.push(<Session trackNum={i+1} time={'time-1700 / time-1900'} sessionTime={"5PM"} businessInfo={itinerary[i].dinner} activity={"Dinner"} />);
+                tempNine.push(<Session trackNum={i+1} time={'time-2100 / time-2400'} sessionTime={"9PM"} businessInfo={itinerary[i].nightLife} activity={"Night Activity"} />);
             }
 
             setEightAM(tempEight);

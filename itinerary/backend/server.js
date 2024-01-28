@@ -68,6 +68,29 @@ const sortByRating = (businesses) => {
 const buildItinerary = async () => {
     const tripLength = calcDays(startDate, endDate);
     let itinerary = [];
+    
+
+    // fill in options
+    let results = await getOptions(categories[0]);
+    let sortedRes = sortByRating(results.businesses)
+    otherOptions.breakfast = sortedRes;
+
+    results = await getOptions(categories[1]);
+    sortedRes = sortByRating(results.businesses)
+    otherOptions.activities = sortedRes;
+
+    results = await getOptions(categories[2]);
+    sortedRes = sortByRating(results.businesses)
+    otherOptions.lunch = sortedRes;
+   
+    results = await getOptions(categories[4]);
+    sortedRes = sortByRating(results.businesses)
+    otherOptions.dinner = sortedRes;
+
+    results = await getOptions(categories[5]);
+    sortedRes = sortByRating(results.businesses)
+    otherOptions.nightLife = sortedRes;
+
     for(let i = 0; i < tripLength; i++){
         const day = {
             breakfast: {},
@@ -77,24 +100,19 @@ const buildItinerary = async () => {
             dinner: {},
             nightLife: {},
         }
-        let results = await getOptions(categories[0]);
-        const sortedRes = sortByRating(results.businesses)
-        day.breakfast = sortedRes[i];
-        otherOptions.breakfast = sortedRes;
-        results = await getOptions(categories[1]);
-        day.activityOne = sortedRes[i];
-        otherOptions.activities = sortedRes;
-        results = await getOptions(categories[2]);
-        day.lunch = sortedRes[i];
-        otherOptions.lunch = results.businesses;
-        results = await getOptions(categories[3]);
-        day.activityTwo = sortedRes[i];
-        results = await getOptions(categories[4]);
-        day.dinner = sortedRes[i];
-        otherOptions.dinner = sortedRes;
-        results = await getOptions(categories[5]);
-        day.nightLife = sortedRes[i];
-        otherOptions.nightLife = sortedRes;
+    
+        day.breakfast = otherOptions.breakfast[i];
+       
+        day.activityOne = otherOptions.activities[i];
+  
+        day.lunch = otherOptions.lunch[i];
+  
+        day.activityTwo = otherOptions.activities[i];
+  
+        day.dinner = otherOptions.dinner[i];
+
+        day.nightLife = otherOptions.nightLife[i];
+
 
         itinerary.push(day);
     }
