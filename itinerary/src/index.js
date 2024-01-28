@@ -4,11 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import LandingPage from "./LandingPage"
+import ItineraryPage from './ItineraryPage';
+import Schedule from './components/schedule';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <LandingPage />
+    <Schedule/>
   </React.StrictMode>
 );
 
