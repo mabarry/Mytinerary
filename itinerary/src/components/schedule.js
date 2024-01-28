@@ -44,8 +44,11 @@ function Schedule() {
     useEffect(()=>{buildSessions()},[])
     return(
         <div className="main2">
-            <h2> Itinerary </h2>
-            <div className="schedule">
+            <div className="title">
+                <h2> Itinerary </h2>
+                <h4>Click on any activity to edit the selection</h4>
+            </div>
+            <div class="schedule">
 
             <span className="track-slot" aria-hidden="true" style={{gridColumn: "track-1"}}>Monday</span>
             <span className="track-slot" aria-hidden="true" style={{gridColumn: "track-2"}}>Tuesday</span>
