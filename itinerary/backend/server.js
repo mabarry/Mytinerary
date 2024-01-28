@@ -26,7 +26,7 @@ const otherOptions = {
     nightLife: {}
 }
 
-const storedItinerary = null;
+let storedItinerary = null;
 
 
 const getOptions = async (category) => {
@@ -57,14 +57,11 @@ const getOptions = async (category) => {
 const calcDays = (start, end) => {
     const timeDifference = end- start;
     const daysDifference = timeDifference / (1000 * 60 * 60 * 24) + 1;
-    console.log(`${daysDifference} difference between the dates`)
     return daysDifference;
 }
 
 const sortByRating = (businesses) => {
     const sortedBusinesses = businesses.sort((a,b) => b.rating - a.rating);
-    console.log("SORTED INCOMING")
-    console.log(sortedBusinesses)
     return sortedBusinesses;
 }
 
@@ -154,6 +151,7 @@ app.post('/send-info', async(req, res) => {
 });
 
 app.get('/build-itinerary', async(req,res)=> {
+    console.log("")
     const results = await buildItinerary();
     storedItinerary = results;
     res.send(results)
