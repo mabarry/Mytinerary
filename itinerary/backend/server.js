@@ -54,22 +54,20 @@ const getOptions = async (category) => {
 
 const calcDays = (start, end) => {
     const timeDifference = end- start;
-    const daysDifference = timeDifference / (1000 * 60 * 60 * 24);
+    const daysDifference = timeDifference / (1000 * 60 * 60 * 24) + 1;
     console.log(`${daysDifference} difference between the dates`)
     return daysDifference;
 }
 
 const sortByRating = (businesses) => {
-
+    const sortedBusinesses = businesses.sort((a,b) => b.rating - a.rating);
+    console.log("SORTED INCOMING")
+    console.log(sortedBusinesses)
+    return sortedBusinesses;
 }
 
 const buildItinerary = async () => {
     const tripLength = calcDays(startDate, endDate);
-    console.log("INSIDE BUILD ITINERARY")
-    console.log(location)
-    console.log(startDate)
-    console.log(endDate)
-    console.log(tripLength);
     let itinerary = [];
     for(let i = 0; i < tripLength; i++){
         const day = {
@@ -81,28 +79,25 @@ const buildItinerary = async () => {
             nightLife: {},
         }
         let results = await getOptions(categories[0]);
-        day.breakfast = results.businesses[i];
-        console.log("INCOMING BREAKFAST")
-        console.log(results.businesses[0])
-        console.log(results.businesses)
-        otherOptions.breakfast = results.businesses;
+        const sortedRes = sortByRating(results.businesses)
+        day.breakfast = sortedRes[i];
+        otherOptions.breakfast = sortedRes;
         results = await getOptions(categories[1]);
-        day.activityOne = results.businesses[i];
-        otherOptions.activities = results.businesses;
+        day.activityOne = sortedRes[i];
+        otherOptions.activities = sortedRes;
         results = await getOptions(categories[2]);
-        day.lunch = results.businesses[i];
+        day.lunch = sortedRes[i];
         otherOptions.lunch = results.businesses;
         results = await getOptions(categories[3]);
-        day.activityTwo = results.businesses[i];
+        day.activityTwo = sortedRes[i];
         results = await getOptions(categories[4]);
-        day.dinner = results.businesses[i];
-        otherOptions.dinner = results.businesses;
+        day.dinner = sortedRes[i];
+        otherOptions.dinner = sortedRes;
         results = await getOptions(categories[5]);
-        day.nightLife = results.businesses[i];
-        otherOptions.nightLife = results.businesses;
+        day.nightLife = sortedRes[i];
+        otherOptions.nightLife = sortedRes;
 
         itinerary.push(day);
-        console.log(otherOptions)
     }
 
     return itinerary;
@@ -131,6 +126,15 @@ app.get('/otherOptions', async(req,res)=> {
     console.log(otherOptions)
     res.send(otherOptions)
 });
+
+app.get('/dates', async(req,res) => {
+    const dates = {
+        start: startDate,
+        end: endDate
+    }
+
+    res.send(dates);
+})
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
