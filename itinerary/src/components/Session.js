@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Session.css"
 
-const Session = ({time, businessInfo, activity}) => {
+const Session = () => {
     
 
     return (

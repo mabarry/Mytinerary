@@ -1,4 +1,5 @@
 import Schedule from "./components/schedule";
+import Session from "./components/Session";
 import "./Itinerary.css"
 import { Helmet } from "react-helmet";
 
@@ -21,6 +22,12 @@ function ItineraryPage() {
                         <p>DayOfWeek, DD/MM</p>
                         <div className="options-border">
                             <div className="options">
+                                <Session />
+                                <Session />
+                                <Session />
+                                <Session />
+                                <Session />
+                                <Session />
                             </div>
                         </div>
                     <button className="next-button">Next Day</button>
