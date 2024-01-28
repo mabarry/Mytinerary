@@ -56,11 +56,20 @@ const calcDays = (start, end) => {
     const timeDifference = end- start;
     const daysDifference = timeDifference / (1000 * 60 * 60 * 24);
     console.log(`${daysDifference} difference between the dates`)
+    return daysDifference;
 }
 
-const buildItinerary = async (startDate, endDate) => {
+const sortByRating = (businesses) => {
+
+}
+
+const buildItinerary = async () => {
     const tripLength = calcDays(startDate, endDate);
-    
+    console.log("INSIDE BUILD ITINERARY")
+    console.log(location)
+    console.log(startDate)
+    console.log(endDate)
+    console.log(tripLength);
     let itinerary = [];
     for(let i = 0; i < tripLength; i++){
         const day = {
@@ -73,6 +82,9 @@ const buildItinerary = async (startDate, endDate) => {
         }
         let results = await getOptions(categories[0]);
         day.breakfast = results.businesses[i];
+        console.log("INCOMING BREAKFAST")
+        console.log(results.businesses[0])
+        console.log(results.businesses)
         otherOptions.breakfast = results.businesses;
         results = await getOptions(categories[1]);
         day.activityOne = results.businesses[i];
@@ -90,6 +102,7 @@ const buildItinerary = async (startDate, endDate) => {
         otherOptions.nightLife = results.businesses;
 
         itinerary.push(day);
+        console.log(otherOptions)
     }
 
     return itinerary;
@@ -98,28 +111,24 @@ const buildItinerary = async (startDate, endDate) => {
 app.post('/send-info', async(req, res) => { 
     try{
         const { sentLoc, sentStart, sentEnd } = req.body;
-        console.log("INCOMING INFORMATION");
-        console.log(sentLoc)
-        console.log(sentStart)
-        console.log(sentEnd)
         location = sentLoc;
         startDate = new Date(sentStart);
         endDate = new Date(sentEnd);
         res.json({ status: 'success' });
     } catch (error) {
       console.error('Error processing request:', error);
-      // Send an error response
       res.status(500).json({ error: 'Internal Server Error' });
     }
 });
 
 app.get('/itinerary', async(req,res)=> {
-    const results = await buildItinerary(0,1);
+    const results = await buildItinerary();
     res.send(results)
 });
 
 app.get('/otherOptions', async(req,res)=> {
-    const results = await buildItinerary(0,1);
+    const results = await buildItinerary();
+    console.log(otherOptions)
     res.send(otherOptions)
 });
 

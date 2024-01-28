@@ -1,35 +1,41 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./EditOptions.css";
 import Option from "./components/Option";
 import { Helmet } from "react-helmet";
+import axios from 'axios';
 
-function EditOptions() {
-    /*
-        {
-        id: 'lfwzj3hKknLkWk4StJEfQA',
-        alias: 'la-panadería-san-antonio-7',
-        name: 'La Panadería',
-        image_url: 'https://s3-media2.fl.yelpcdn.com/bphoto/2di0R6hsWobQPGs3UJZiEA/o.jpg',
-        is_closed: false,
-        url: 'https://www.yelp.com/biz/la-panader%C3%ADa-san-antonio-7?adjust_creative=t2Xswg8ijlbmPOQYGvfnBg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=t2Xswg8ijlbmPOQYGvfnBg',
-        review_count: 2287,
-        categories: [Array],
-        rating: 4.5,
-        coordinates: [Object],
-        transactions: [Array],
-        price: '$$',
-        location: [Object],
-        phone: '+12105926264',
-        display_phone: '(210) 592-6264',
-        distance: 7915.80750923748
+function EditOptions(eventType) {
+
+  
+  const[optionList, setOptionList] = useState([])
+
+  const getOtherOptions = async () => {
+    try {
+        const response = await axios.get('http://localhost:4000/otherOptions');
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+  };
+
+  const buildList = async () => {
+    let tempList = []
+    const results = await getOtherOptions();
+    if(true) {
+        for (let i = 0; i < results.breakfast.length; i++) {
+            tempList.push(<Option onClick={handleOptionClick} optionInfo={results.breakfast[i]} key={i}/>)
         }
-    */
+    }
+    setOptionList(tempList)
+  }
 
   const [selectedOption, setSelectedOption] = useState(null);
 
   const handleOptionClick = (optionData) => {
     setSelectedOption(optionData);
   };
+
+  useEffect(()=>{buildList()},[])
 
   return (
     <>
@@ -67,21 +73,8 @@ function EditOptions() {
                 <h1>Edit Your Selections</h1>
                 <p>Breakfast</p>
                 <div className="options-border">
-                <div className="options">
-                    <Option onClick={handleOptionClick} />
-                    {/* Add other Option components with the same onClick prop */}
-                    <Option onClick={handleOptionClick} />
-                    {/* Add other Option components with the same onClick prop */}
-                    <Option onClick={handleOptionClick} />
-                    {/* Add other Option components with the same onClick prop */}
-                    <Option onClick={handleOptionClick} />
-                    {/* Add other Option components with the same onClick prop */}
-                    <Option onClick={handleOptionClick} />
-                    {/* Add other Option components with the same onClick prop */}
-                    <Option onClick={handleOptionClick} />
-                    {/* Add other Option components with the same onClick prop */}
-                    <Option onClick={handleOptionClick} />
-                    {/* Add other Option components with the same onClick prop */}
+                    <div className="options">
+                        {optionList}
                     </div>
                 </div>
             </div>
