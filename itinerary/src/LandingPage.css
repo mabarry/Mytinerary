@@ -20,14 +20,14 @@
     font-size: 200%;
     font-family: 'Roboto Slab', serif;
     z-index: 2;
-    width: 24%;
-    height: 70%;
+    width: 30%;
+    height: 60%;
     background-color: #fffffe;
     border-radius: 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 3%;
+    padding: 10% 3% 3%;
 }
 
 .logo {
@@ -40,9 +40,17 @@
 .dest{
     border:2px solid #b3b3b3;
     background:#dddddd;
-    width:200px;
+    width:180px;
     border-radius:25px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    padding: 4px 10px;
+    font-weight: bold;
+    color: #363062;
+}
+
+.dest:focus{
+    border: 2px solid #626060;
+    outline: none;
 }
 
 .dest-flex{
@@ -53,6 +61,7 @@
     width: 20px;
     height: 20px;
     margin-right: 5px;
+    margin-top: 1%;
 }
 
 .date-flex{
@@ -63,14 +72,23 @@
     width: 20px;
     height: 20px;
     margin-right: 5px;
+    margin-top: 8%;
 }
 
 .datepicker {
     border: 2px solid #b3b3b3;
     background: #dddddd;
-    width: 200px;
+    width: 180px;
     border-radius: 25px;
-    margin-bottom: 100px;
+    margin-bottom: 40px;
+    padding: 4px 10px;
+    font-weight: bold;
+    color: #363062;
+}
+
+.datepicker:focus {
+    outline: none;
+    border: 2px solid #626060;
 }
 
 .serviceName{
@@ -84,9 +102,17 @@
 }
 
 .submit{
-    width: 30%;
-    height: 10%;
+    width: 33%;
+    height: 12%;
     border-radius: 32px;
-    border-color: rgb(42, 193, 145);
+    border: none;
     background-color: rgb(42, 193, 145);
+    color: #363062;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.submit:hover{
+    cursor: pointer;
+    filter:brightness(85%);
 }
