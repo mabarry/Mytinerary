@@ -73,8 +73,8 @@ function EditOptions(eventType) {
             </div>
           </div>
         <div className="selection">
-                <h1>Edit Your Selections</h1>
-                <p>Breakfast</p>
+                <h1>Edit Your Selections for</h1>
+                <p>Breakfast at 8a</p>
                 <div className="options-border">
                     <div className="options">
                         {optionList}
