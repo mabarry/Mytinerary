@@ -1,4 +1,4 @@
-import "./ItineraryPage.css";
+
 function ItineraryPage() {
     return(
         <div className="main">
