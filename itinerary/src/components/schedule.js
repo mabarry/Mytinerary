@@ -2,7 +2,10 @@ import "./style1.css";
 function Schedule() {
     return(
         <div className="main2">
-            <h2> Itinerary </h2>
+            <div className="title">
+                <h2> Itinerary </h2>
+                <h4>Click on any activity to edit the selection</h4>
+            </div>
             <div class="schedule">
 
             <span class="track-slot" aria-hidden="true" style={{gridColumn: "track-1"}}>Monday</span>
@@ -47,51 +50,51 @@ function Schedule() {
                 <span class="session-activity">Activity</span>
             </div>
             
-            <h2 class="time-slot" style={{gridRow: "time-0900"}}>9:00am</h2>
+            <h3 class="time-slot" style={{gridRow: "time-0900"}}>9:00am</h3>
 
             <div class="session session-6 track-2" style={{gridColumn: "track-2", gridRow: "time-0900 / time-1100"}}>
-                <h3 class="session-title"><a href="#">Resturaunt Name</a></h3>
+                <h3 class="session-title"><a href="#">Restaurant Name</a></h3>
                 <span class="session-time">9:00 - 11:00</span>
                 <span class="session-address">Address: 1</span>
                 <span class="session-activity">Breakfast</span>
             </div>
 
             <div class="session session-7 track-3" style={{gridColumn: "track-3", gridRow: "time-0900 / time-1000"}}>
-                <h3 class="session-title"><a href="#">Resturaunt Name</a></h3>
+                <h3 class="session-title"><a href="#">Restaurant Name</a></h3>
                 <span class="session-time">9:00 - 10:00</span>
                 <span class="session-address">Address: 1</span>
                 <span class="session-activity">Breakfast</span>
             </div>
 
-            <h2 class="time-slot" style={{gridRow: "time-1000"}}>10:00am</h2>
+            <h3 class="time-slot" style={{gridRow: "time-1000"}}>10:00am</h3>
             
-            <h2 class="time-slot" style={{gridRow: "time-1100"}}>11:00am</h2>
+            <h3 class="time-slot" style={{gridRow: "time-1100"}}>11:00am</h3>
 
-            <h2 class="time-slot" style={{gridRow: "time-1200"}}>12:00pm</h2>
+            <h3 class="time-slot" style={{gridRow: "time-1200"}}>12:00pm</h3>
             
-            <h2 class="time-slot" style={{gridRow: "time-1300"}}>1:00pm</h2>
+            <h3 class="time-slot" style={{gridRow: "time-1300"}}>1:00pm</h3>
 
-            <h2 class="time-slot" style={{gridRow: "time-1400"}}>2:00pm</h2>
+            <h3 class="time-slot" style={{gridRow: "time-1400"}}>2:00pm</h3>
 
-            <h2 class="time-slot" style={{gridRow: "time-1500"}}>3:00pm</h2>
+            <h3 class="time-slot" style={{gridRow: "time-1500"}}>3:00pm</h3>
 
-            <h2 class="time-slot" style={{gridRow: "time-1600"}}>4:00pm</h2>
+            <h3 class="time-slot" style={{gridRow: "time-1600"}}>4:00pm</h3>
 
-            <h2 class="time-slot" style={{gridRow: "time-1700"}}>5:00pm</h2>
+            <h3 class="time-slot" style={{gridRow: "time-1700"}}>5:00pm</h3>
 
-            <h2 class="time-slot" style={{gridRow: "time-1800"}}>6:00pm</h2>
+            <h3 class="time-slot" style={{gridRow: "time-1800"}}>6:00pm</h3>
 
-            <h2 class="time-slot" style={{gridRow: "time-1900"}}>7:00pm</h2>
+            <h3 class="time-slot" style={{gridRow: "time-1900"}}>7:00pm</h3>
 
-            <h2 class="time-slot" style={{gridRow: "time-2000"}}>8:00pm</h2>
+            <h3 class="time-slot" style={{gridRow: "time-2000"}}>8:00pm</h3>
 
-            <h2 class="time-slot" style={{gridRow: "time-2100"}}>9:00pm</h2>
+            <h3 class="time-slot" style={{gridRow: "time-2100"}}>9:00pm</h3>
 
-            <h2 class="time-slot" style={{gridRow: "time-2200"}}>10:00pm</h2>
+            <h3 class="time-slot" style={{gridRow: "time-2200"}}>10:00pm</h3>
 
-            <h2 class="time-slot" style={{gridRow: "time-2300"}}>11:00pm</h2>
+            <h3 class="time-slot" style={{gridRow: "time-2300"}}>11:00pm</h3>
 
-            <h2 class="time-slot" style={{gridRow: "time-2400"}}>12:00pm</h2>
+            <h3 class="time-slot" style={{gridRow: "time-2400"}}>12:00pm</h3>
 
             {/* <!-- Sessions 6, 7, 8 --> */}
 

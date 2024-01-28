@@ -4,10 +4,30 @@ body{
 
 .main2{
     display: block;
-    width: 70%;
+    width: 90%;
     background-color: white;
     padding: 10px;
     overflow: auto;
+    border-radius: 8px;
+}
+
+.main2 h2 {
+  color: rgb(42,193,145);
+}
+
+.main2::-webkit-scrollbar {
+  width: 20px;
+}
+
+.main2::-webkit-scrollbar-thumb {
+  background-color: rgb(218, 218, 218); /* Color of the thumb */
+  border-radius: 8px;
+}
+
+.main2::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 8px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
 }
 
 .session {
@@ -15,33 +35,45 @@ body{
     border-radius: 2px;
     font-size: 14px;
     box-shadow:
-      rgba(255,255,255,.6) 1px 1px 0,
-      rgba(0,0,0,.3) 4px 4px 0;
+        rgba(255, 255, 255, .6) 1px 1px 4px 0,
+        rgba(0, 0, 0, .3) 2px 2px 4px 0;
+  }
+
+  .title {
+    display: flex;
+    margin-left: 10px;
+  }
+
+  .title h4{
+    color: #363062;
+    opacity: 50%;
+    margin-top: 30px;
+    margin-left: 8px;
   }
 
 
   .track-1 {
-    background-color: #1259B2;
+    background-color: rgb(42,193,145);
     color: #fff;
   }
   
   .track-2 {
-    background-color: #687f00;
+    background-color: rgb(42,193,145);
     color: #fff;
   }
   
   .track-3 {
-    background-color: #544D69;
+    background-color: rgb(42,193,145);
     color: #fff;
   }
   
   .track-4 {
-    background-color: #c35500;
+    background-color: rgb(42,193,145);
     color: #fff;
   }
 
   .track-5 {
-    background-color: #c6200a;
+    background-color: rgb(42,193,145);
     color: #fff;
   }
   
