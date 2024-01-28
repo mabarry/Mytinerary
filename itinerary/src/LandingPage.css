@@ -33,7 +33,8 @@
 .logo {
     width: 100px;
     height: 100px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
+    margin-top: 40px;
 }
 
 .dest{
@@ -93,11 +94,11 @@
 .serviceName{
     font-size: 200%;
     color: rgb(42, 193, 145);
-    margin-bottom: 1px;
+    margin-bottom: 5px;
 }
 
 .text{   
-    margin-bottom: 30px;
+    margin-bottom: 60px;
 }
 
 .submit{
