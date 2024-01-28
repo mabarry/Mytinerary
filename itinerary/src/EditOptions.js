@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import "./EditOptions.css";
 import Option from "./components/Option";
 import { Helmet } from "react-helmet";
+import axios from 'axios';
+import { useEffect } from "react";
 
-function EditOptions() {
+function EditOptions(eventType) {
     /*
         {
         id: 'lfwzj3hKknLkWk4StJEfQA',
@@ -24,12 +26,36 @@ function EditOptions() {
         distance: 7915.80750923748
         }
     */
+  
+  const[optionList, setOptionList] = useState([])
+
+  const getOtherOptions = async () => {
+    try {
+        const response = await axios.get('http://localhost:4000/read-file/Vibify_Database.csv');
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+  };
+
+  const buildList = async () => {
+    let tempList = []
+    const results = await getOtherOptions();
+    if(true) {
+        for (let item in results) {
+            tempList.append(<Option onClick={handleOptionClick} optionInfo={item}/>)
+        }
+    }
+    setOptionList(tempList)
+  }
 
   const [selectedOption, setSelectedOption] = useState(null);
 
   const handleOptionClick = (optionData) => {
     setSelectedOption(optionData);
   };
+
+  useEffect(()=>{buildList()},[])
 
   return (
     <>
@@ -67,21 +93,8 @@ function EditOptions() {
                 <h1>Edit Your Selections</h1>
                 <p>Breakfast</p>
                 <div className="options-border">
-                <div className="options">
-                    <Option onClick={handleOptionClick} />
-                    {/* Add other Option components with the same onClick prop */}
-                    <Option onClick={handleOptionClick} />
-                    {/* Add other Option components with the same onClick prop */}
-                    <Option onClick={handleOptionClick} />
-                    {/* Add other Option components with the same onClick prop */}
-                    <Option onClick={handleOptionClick} />
-                    {/* Add other Option components with the same onClick prop */}
-                    <Option onClick={handleOptionClick} />
-                    {/* Add other Option components with the same onClick prop */}
-                    <Option onClick={handleOptionClick} />
-                    {/* Add other Option components with the same onClick prop */}
-                    <Option onClick={handleOptionClick} />
-                    {/* Add other Option components with the same onClick prop */}
+                    <div className="options">
+                        {optionList}
                     </div>
                 </div>
             </div>
