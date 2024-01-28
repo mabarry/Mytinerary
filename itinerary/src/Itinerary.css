@@ -30,3 +30,22 @@
 .iten-title svg{
     height: 6vh;
 }
+
+.options-border {
+    background-color: #363062;
+    border-radius: 16px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.options {
+    height: 55vh;
+    width: 60vh;
+    border-radius: 8px;
+    overflow-y: auto;
+    padding: 5%;
+    background-color: #363062;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    flex-wrap: wrap;
+    justify-content: center;
+}
