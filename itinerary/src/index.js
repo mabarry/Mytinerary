@@ -1,17 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import AppRoutes from './Routes';
 import App from './App';
-import EditOptions from './EditOptions'
 import reportWebVitals from './reportWebVitals';
-import LandingPage from "./LandingPage"
-import ItineraryPage from './ItineraryPage';
-import Schedule from './components/schedule';
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <LandingPage />
+    <Router> 
+      <AppRoutes />
+    </Router>
+   
   </React.StrictMode>
 );
 

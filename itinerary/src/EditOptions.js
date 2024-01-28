@@ -25,7 +25,6 @@ function EditOptions() {
 
     return(
     <div className="main">
-        <img src="./images/logo.png"/>
         <div className="edits">
             <div className="info"></div>
             <div className="selection">
