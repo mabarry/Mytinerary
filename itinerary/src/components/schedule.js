@@ -1,4 +1,6 @@
 import "./style1.css";
+import Session from "./Session";
+
 function Schedule() {
     return(
         <div className="main2">
@@ -62,6 +64,8 @@ function Schedule() {
                 <span class="session-address">Address: 1</span>
                 <span class="session-activity">Breakfast</span>
             </div>
+
+            <Session trackNum={1} time={'time-0900 / time-1000'} sessionTime={"9AM"} businessInfo={{}} activity={"Hot Yoga"} />
 
             <h2 class="time-slot" style={{gridRow: "time-1000"}}>10:00am</h2>
             
