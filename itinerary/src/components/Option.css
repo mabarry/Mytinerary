@@ -1,5 +1,4 @@
 .option-box {
-    border: 1px solid black;
     width: 15vw;
     height: 30vh;
     padding: 1%;
@@ -9,6 +8,7 @@
     align-items: center;
     text-align: center;
     border-radius: 16px;
+    overflow: hidden;
 }
 
 .option-box:hover {
@@ -21,10 +21,12 @@
     flex-grow: 1;
     border-radius: 16px;
     margin-top: 10px;
+    width: 100%;
 }
 
 .option-box h3 {
     margin: 5px 0;
+    flex-shrink: 0;
 }
 
 .dest-flex {
@@ -41,4 +43,5 @@
 
 .dest-flex span {
     font-size: 1rem;
+    flex-shrink: 0;
 }
